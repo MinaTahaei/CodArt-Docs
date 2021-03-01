@@ -1,0 +1,15 @@
+site_name: Refactoring Documentations
+nav:
+  - Home: index.md
+  - About: about.md
+  - Refactorings:
+    - Rename Method: Refactorings/RenameMethod.md
+    - Increase Field Visibility: Refactorings/IVField.md
+    - Decrease Field Visibility: Refactorings/DVField.md
+    - Make Field Final: Refactorings/FinalField.md
+    - Make Field Non-Final: Refactorings/NonFinalField.md
+    - Pull Up Field: Refactorings/PullUpField.md
+    - Push Down Field: Refactorings/PushDownField.md
+    - Pull Up Method: Refactorings/PullUpMethod.md
+theme:
+  name: material
