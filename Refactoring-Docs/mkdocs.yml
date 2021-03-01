@@ -1,7 +1,6 @@
 site_name: Refactoring Documentations
 nav:
   - Home: index.md
-  - About: about.md
   - Refactorings:
     - Rename Method: Refactorings/RenameMethod.md
     - Increase Field Visibility: Refactorings/IVField.md

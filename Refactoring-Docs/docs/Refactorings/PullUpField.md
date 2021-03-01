@@ -1,7 +1,7 @@
 <span style="color:darkblue;font-size:30px;">Introduction </span>
 
 When subclasses grow and get developed separately, identical (or nearly identical) fields and methods appear. 
-Pull up method refactoring removes the repetitive field from subclasses and moves it to a superclass.
+Pull up field refactoring removes the repetitive field from subclasses and moves it to a superclass.
 
 Example:
 
