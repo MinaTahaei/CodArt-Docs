@@ -18,7 +18,7 @@ Example:
 
 <span style="color:darkblue;font-size:30px;">Code</span>
 <Pre>
- <Code style="display: block; border: 1px solid #999;">
+<Code style="display: block; border: 1px solid #999;">
 from utils import understand_install_test
 import os
 import understand
