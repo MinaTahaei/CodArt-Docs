@@ -17,7 +17,8 @@ Example:
 1. After refactoring, all the old method names in the project should be changed.
 
 <span style="color:darkblue;font-size:30px;">Code</span>
-```
+<Pre>
+ <Code style="display: block; border: 1px solid #999;">
 from utils import understand_install_test
 import os
 import understand
@@ -27,7 +28,7 @@ from antlr4.TokenStreamRewriter import TokenStreamRewriter
 from gen.javaLabeled.JavaLexer import JavaLexer
 from gen.javaLabeled.JavaParserLabeled import JavaParserLabeled
 from gen.javaLabeled.JavaParserLabeledListener import JavaParserLabeledListener
-
+<span style="color:green;">
 """
 See whether the method is defined in a superclass or subclass. If so, you must repeat all steps in these classes too.
 The next method is important for maintaining the functionality of the program during the refactoring process. Create 
@@ -37,11 +38,11 @@ Find all references to the old method and replace them with references to the ne
 Delete the old method. If the old method is part of a public interface, don’t perform this step. Instead, 
 mark the old method as deprecated.
 """
-
+</span>
 
 class RenameMethodListener(JavaParserLabeledListener):
     def __init__(self, java_file_path, common_token_stream, scope_class_name, target_method_name, new_name, reference=None):
-    
+    <span style="color:green;">
         """
         The Main listener which parses the file based on the provided information,
         using ANTLR parser generator and tokenization methods
@@ -65,7 +66,7 @@ class RenameMethodListener(JavaParserLabeledListener):
         No returns
    
         """
-        
+       </span> 
         self.file_path = java_file_path
         self.token_stream = common_token_stream
         self.token_stream_rewriter = TokenStreamRewriter(common_token_stream)
@@ -123,28 +124,28 @@ class RenameMethodListener(JavaParserLabeledListener):
 
 
 def get_method_calls(udb_path, scope_class_name, new_name):
+<span style="color:green;">
+"""
+Finds all of the refactored method calls in the database file 
+and returns all of the correct referencs
 
-        """
-        Finds all of the refactored method calls in the database file 
-        and returns all of the correct referencs
-
-        Parameters
-        ----------
-        udb_path : str
-             Address path to the database file
+Parameters
+----------
+udb_path : str
+    Address path to the database file
     
-        scope_class_name : str
-             Name of the class in which the refactoring has to be done
+scope_class_name : str
+    Name of the class in which the refactoring has to be done
                
-        new_name : str
-             The new name of the refactored method
+new_name : str
+    The new name of the refactored method
     
-        Returns
-        ----------
-        references
+Returns
+----------
+  references
    
-        """
-        
+"""
+</span>
     # Open Database
     if not os.path.exists(path=udb_path):
         raise ValueError("Database file does not exist!")
@@ -166,7 +167,7 @@ def get_method_calls(udb_path, scope_class_name, new_name):
     return references
     
 def rename_method(java_file_path, scope_class_name, target_method_name, new_name, reference=None):
- 
+<span style="color:green;">
 """
 Main Entry Point to the Listener and Tree Walker
 
@@ -189,7 +190,7 @@ Returns
   No returns
    
 """
-
+</span>
     stream = FileStream(java_file_path)
     lexer = JavaLexer(stream)
     tokens = CommonTokenStream(lexer)
@@ -224,5 +225,6 @@ if __name__ == '__main__':
     for ref in references:
         rename_method(ref["file_path"], ref["scope"].split(".")[0], target_method_name=method_name,
                       new_name=new_method_name, reference=ref)
-                      
-```
+                            
+ </Code>
+</Pre>
