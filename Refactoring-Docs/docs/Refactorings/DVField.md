@@ -1,6 +1,6 @@
 <span style="color:darkblue;font-size:30px;">Introduction </span>
 
-Decrease the visibility of a method from public to protected, protected to package or package to private.
+Decrease the visibility of a field from public to protected, protected to package or package to private.
 
 Example:
 
@@ -10,7 +10,8 @@ Example:
 
 <span style="color:MidnightBlue;font-size:20px;">Pre Conditions: </span>
 
-1. User must enter the method's name in order to decrease its visibility.
+1. User must enter the field's name, and the source class's name for the refactoring
+   in order to decrease the target field's visibility.
 
 <span style="color:MidnightBlue;font-size:20px;">Post Conditions: </span>
 

@@ -8,7 +8,7 @@ Example:
 
 <span style="color:MidnightBlue;font-size:20px;">Pre Conditions: </span>
 
-1. User must enter the existing method's name, The source class for the refactoring, and the new method name in order to rename.
+1. User must enter the existing method's name, The source class's name for the refactoring, and the new method name in order to rename.
 
 2. Check if the method exist, then rename it.
 

@@ -1,6 +1,6 @@
 <span style="color:darkblue;font-size:30px;">Introduction </span>
 
-Increase the visibility of a method from private to package, package to protected or protected to public.
+Increase the visibility of a field from private to package, package to protected or protected to public.
 
 Example:
 
@@ -10,7 +10,8 @@ Example:
 
 <span style="color:MidnightBlue;font-size:20px;">Pre Conditions: </span>
 
-1. User must enter the method's name in order to increase its visibility.
+1. User must enter the field's name, and the source class's name for the refactoring
+   in order to increase the target field's visibility.
 
 <span style="color:MidnightBlue;font-size:20px;">Post Conditions: </span>
 
@@ -34,11 +35,12 @@ from refactorings.Refactoring_action_module_for_big_project import Main_Refactor
 
 
 class IncreaseFieldVisibilityRefactoringListener(JavaParserLabeledListener):
+    <span style="color:green;">
     """
-    To implement extract class refactoring based on its actors.
-    Creates a new class and move fields and methods from the old class to the new one
+    To implement Increase Field Visibility refactoring based on its actors.
+    Detects the required field and increases/changes its visibility status.
     """
-
+    </span>
     def __init__(self, common_token_stream: CommonTokenStream = None, source_class=None, field_name: str = None):
 
         if field_name is None:
